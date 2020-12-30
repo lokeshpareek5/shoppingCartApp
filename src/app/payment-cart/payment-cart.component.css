@@ -20,3 +20,15 @@
     padding: 10px;
     background: #eeeeee;
 }
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .qty {
+    border: 1px solid #a6a6a7;
+    padding: 2px 4px;
+    margin: 0 3px;
+}
+}
