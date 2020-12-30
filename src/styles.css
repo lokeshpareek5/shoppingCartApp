@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+.fa-heart, .fa-asterisk {
+    color: red;
+  }
+.font-12-blue {
+    font-size: 12px;
+    color: #0b58dc;
+}
+
+.font-14-blue {
+    font-size: 14px;
+    color: #0b58dc;
+}
+
+.font-12-black {
+    font-size: 12px;
+    color: #000000;
+}
+.margin-0 {
+    margin:0
+}
+.width-30 {
+    width: 30%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.bottom-border {
+    border-bottom: 1px solid #a6a6a7;
+}
+
+.top-border {
+    border-top: 1px solid #a6a6a7;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.font-7 {
+    font-size: 7px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+.text-right {
+    text-align: right;
+}
+.p-r-0 {
+    padding-right: 0px;
+}
+.p-l-0 {
+    padding-left: 0px;
+}
+.m-r-l-5 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+

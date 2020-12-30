@@ -1,0 +1,22 @@
+.qty {
+    border: 1px solid #a6a6a7;
+    padding: 5px 12px;
+    margin: 0 3px;
+}
+.order-summary {
+    border: 1px solid #a6a6a7;
+    padding: 10px;
+}
+.header-col {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.product-table {
+    border: 1px solid #a6a6a7;
+    margin-bottom: 10px;
+}
+.store-info {
+    border-top: 1px solid #a6a6a7;
+    padding: 10px;
+    background: #eeeeee;
+}

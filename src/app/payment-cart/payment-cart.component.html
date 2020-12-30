@@ -1,0 +1,90 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+        </ol>
+    </nav>    
+    <div class="row">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+            <h6 class="text-uppercase bottom-border">Shopping Cart({{totalProduct}})</h6>
+            <div class="padding-10">
+                <div class="row bottom-border m-b-10">
+                    <div class="col-5 header-col">Product</div>
+                    <div class="col-2 header-col">Qty</div>
+                    <div class="col-2 header-col">Price</div>
+                    <div class="col-2 header-col">Total</div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row product-table" *ngFor="let item of productListing">
+                    <div class="col-5 my-auto">
+                        <img src="{{item.imageUrl}}"/>
+                        <p class="font-14-blue margin-0">{{item.itemName}}</p>
+                        <p class="font-12-blue margin-0">Model: {{item.modelNumber}} | SKU: {{item.modelCode}}</p>
+                        <p class="font-12-black margin-0">{{item.bmFinanceDetail.financePromoMsg}}</p>
+                        <p class="font-12-black"><i class="far fa-heart" aria-hidden="true"></i> Add to wishlist</p>
+                    </div>
+                    <div class="col-2 my-auto">
+                        <i class="fas fa-minus font-7" (click)="qtyValueUpdate('minus', item)"></i>
+                        <span class="font-12-black qty">{{item.itemQuantity}}</span>
+                        <i class="fas fa-plus font-7" (click)="qtyValueUpdate('plus', item)"></i>
+                    </div>
+                    <div class="col-2 my-auto"><p class="font-12-black">${{item.itemAmount.itemPrice}}</p></div>
+                    <div class="col-2 my-auto"><p class="font-12-black">${{item.itemAmount.itemTotalPrice}}</p></div>
+                    <div class="col-1 my-auto"><i class="far fa-trash-alt"></i></div>
+                    <div class="col-12 store-info" *ngIf="item.ispuAvailable === true">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="font-12-black" for="delivey">Choose your delivey options:</label>
+                            </div>
+                            <div class="col-3">
+                                <select class="form-control font-12-black" id="delivey" (change)="onChangeDelivey($event.target.value, item.itemId)">
+                                    <option class="font-12-black">Pickup From Store</option>
+                                    <option class="font-12-black">Deliver Online</option>
+                                </select>
+                            </div>
+                            <div class="col-3" *ngIf="item.isStoreDropDown">
+                                <select class="form-control font-12-black" id="delivey">
+                                    <option class="font-12-black" *ngFor="let store of item.stores" [value]="store.storeName" >{{store.storeName}}</option>
+                                </select>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <div class="order-summary">
+                <h6 class="bottom-border">Order Summary</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="font-12-black">Subtotal</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="font-12-black text-right">${{orderSummary.subtotal}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="font-12-black">Estimated Shipping</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="font-12-black text-right">${{orderSummary.shippingAmount}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 p-r-0">
+                        <p class="font-12-black bottom-border top-border">Estimated Total</p>
+                    </div>
+                    <div class="col-6 p-l-0">
+                        <p class="font-12-black bottom-border top-border text-right">${{orderSummary.cartTotal}}</p>
+                    </div>
+                </div>
+               
+                <p class="font-12-black"><i class="fas fa-asterisk font-7"></i> Sales tax will be calculated at checkout</p>
+                <div class="text-center"><button type="button" class="btn btn-danger btn-sm text-uppercase">Start Secure Checkout</button></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
